@@ -1,0 +1,11 @@
+{
+	"host_map": [
+		"$.macys.com => www.macys.com",
+		"$.macys.com => macys.com",
+		"$.www1.macys.com => www1.macys.com",
+		"$.social.macys.com => social.macys.com",
+		"$.community.macys.com => community.macys.com",
+		"$.prefcenter.email.macys.com => prefcenter.email.macys.com",
+		"$.customerservice.macys.com => customerservice.macys.com"
+	]
+}
