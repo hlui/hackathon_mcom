@@ -245,7 +245,8 @@
 
 @func XMLNode.jqm_initialize() {
   $("/html/head") {
-    insert_top("link", rel: "stylesheet", type: "text/css", href: "http://code.jquery.com/mobile/1.2.0/jquery.mobile.structure-1.2.0.css")
+    #insert_top("link", rel: "stylesheet", type: "text/css", href: "http://code.jquery.com/mobile/1.2.0/jquery.mobile.structure-1.2.0.css")
+    insert_top("link", rel: "stylesheet", type: "text/css", href: "http://jquerymobile.com/demos/1.2.0/css/themes/default/jquery.mobile-1.2.0.css")
     insert_top("script", src: "http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.js")
     insert_top("script", src: "http://code.jquery.com/jquery-1.8.2.js")
   }

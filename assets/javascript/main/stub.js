@@ -10,6 +10,7 @@ $(document).bind('pageinit', function() {
     console.log("--->");
     console.log($(e.target));
     console.log("***END***");
+    $.mobile.loading( 'show' );
     $.ajax({
       type: "GET",
       url: url,
@@ -28,6 +29,7 @@ $(document).bind('pageinit', function() {
   function onSuccess(data) {
     //console.log(data);
     $("#resultLog").html(data);
+    $.mobile.hidePageLoadingMsg();
   }
  
 });
