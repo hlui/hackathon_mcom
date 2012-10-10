@@ -1,5 +1,17 @@
 # The main file executed by Tritium. The start of all other files.
 
+match($path) {
+  with(/\/shop\/product/) {
+    html("UTF-8") {
+      $content_type = "ajax"
+      $("/html") {
+        log("--> Importing pages/product.ts in mappings.ts")
+        @import pages/product.ts
+      }
+    }
+  }
+}
+
 match($content_type) {
   with(/html/) {
     replace(/fb:/, "fbn_") # Rewrite the xmlns facebook nodes before the html parser clobbers them

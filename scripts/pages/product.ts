@@ -1,23 +1,43 @@
-$("./body") {
-  add_class("mw_product")
-  
-  insert("div", id: "mw_content", data-role: "page") {
+insert_after("div", id: "mw_content_product", fake-data-role: "page", class: "mw_product") {
     
-    insert("div", data-role: "header") 
+  #insert("div", data-role: "header") 
     
-    insert("div", data-role: "content") {
+  #insert("div", fake-data-role: "content") {
+    move_here("/html/body//noscript/img")
+    insert("div", class: "mw_product_details") {
       move_here("/html/body//div[@id='productDescription']")
-      move_here("/html/body//noscript/img")
       move_here("/html/body//div[@id='memberProductDetails']")
-      remove(".//*[contains(@class, 'hidden')]")
     }
+    remove(".//*[contains(@class, 'hidden')]")
+    #}
     
-    insert("div", data-role: "footer") 
+  #insert("div", data-role: "footer") 
     
-  }
-  remove("./*[not(@id='mw_content')]")
-  insert("div", "HELLO!")
 }
+remove("/*[not(@id='mw_content_product')]")
+#remove("./*[not(@id='mw_content_product')]")
+# $("./body") {
+#   add_class("mw_product")
+#   
+#   remove("/html/head")
+#   
+#   insert("div", id: "mw_content_product", data-role: "page") {
+#     
+#     insert("div", data-role: "header") 
+#     
+#     insert("div", data-role: "content") {
+#       move_here("/html/body//div[@id='productDescription']")
+#       move_here("/html/body//noscript/img")
+#       move_here("/html/body//div[@id='memberProductDetails']")
+#       remove(".//*[contains(@class, 'hidden')]")
+#     }
+#     
+#     insert("div", data-role: "footer") 
+#     
+#   }
+#   log("@@@@@@@@" + fetch("."))
+#   remove("./*[not(@id='mw_content_product')]")
+# }
 
 
 # log("Importing script: /scripts/pages/product-new.ts")

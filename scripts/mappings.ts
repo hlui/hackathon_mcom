@@ -23,14 +23,14 @@ match($status) {
         @import pages/home.ts
       }
       with(/womens-clothing\/womens-tops/) {
-        # http://mlocal.www1.macys.com/shop/womens-clothing/womens-tops?id=255&edge=hybrid&cm_sp=us_gna-_-shop-tops
+        # http://mlocal.macys.com/shop/womens-clothing/womens-tops?id=255&edge=hybrid&cm_sp=us_gna-_-shop-tops
         log("--> Importing pages/category.ts in mappings.ts")
         @import pages/category.ts
       }
-      with(/\/shop\/product/) {
-        log("--> Importing pages/product.ts in mappings.ts")
-        @import pages/product.ts
-      }
+      # with(/\/shop\/product/) {
+      #         log("--> Importing pages/product.ts in mappings.ts")
+      #         @import pages/product.ts
+      #       }
       else() {
         log("--> No page match in mappings.ts")
       }

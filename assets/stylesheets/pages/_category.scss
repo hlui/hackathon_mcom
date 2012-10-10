@@ -1,0 +1,33 @@
+.mw_category {
+  #mw_content {
+    overflow: hidden;
+    [data-role='content'] {
+      .shortDescription {
+        width: 125px;
+      }
+      .productThumbnail {
+       // border: 1px solid lightgrey;
+        padding: 0 10px;
+        margin: 0 10px 0 0;
+        position: relative;
+        display: inline-block;
+        .imageLink, img.thumbnailImage {
+          height: 100px !important;
+          width: auto !important;
+        }
+        &:before {
+          border-right: 1px solid lightgrey;
+          width: 1px;
+          height: 400px;
+          position: absolute;
+          right: 0;
+          content: "";
+        }
+      }
+    }
+    .mw_product_ajax {
+      border-top: 5px solid red;
+      padding-left: 20px;
+    }
+  }
+}

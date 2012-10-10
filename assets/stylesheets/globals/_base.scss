@@ -20,6 +20,10 @@ body {
   min-height: 100%;
 }
 
+* {
+  @include box-sizing(border-box);
+}
+
 a {
   color: #369;
   text-decoration: none;
