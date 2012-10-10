@@ -1,12 +1,12 @@
 $("./body") {
   add_class("mw_category")
   
-  insert("div", id: "mw_content", data-role: "page") {
+  insert("div", id: "mw_content", fake-data-role: "page") {
     
     
-    insert("div", data-role: "header") 
+    insert("div", fake-data-role: "header") 
     
-    insert("div", data-role: "content") {
+    insert("div", fake-data-role: "content", class: "mw_data_role_content") {
       
       move_here("/html/body//div[@class='productThumbnail']") {
         remove(".//*[contains(@class, 'hidden')]")
@@ -33,12 +33,12 @@ $("./body") {
       # make the thumbnails into a carousel
       insert("div", data-ur-set: "carousel", data-ur-carousel-component: "view_container", data-ur-infinite: "disabled") {
         insert("div", data-ur-carousel-component: "scroll_container") {
-          move_here("./ancestor::div[@data-role='content']//*[@data-ur-carousel-component='item']")
+          move_here("./ancestor::div[contains(@class, 'mw_data_role_content')]//*[@data-ur-carousel-component='item']")
         }
       }
     }
     
-    insert("div", data-role: "footer") 
+    insert("div", fake-data-role: "footer") 
     
     insert("div", class: "mw_product_ajax") {
       # PDP ajaxed in

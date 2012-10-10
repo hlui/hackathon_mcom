@@ -3,10 +3,18 @@ insert_after("div", id: "mw_content_product", fake-data-role: "page", class: "mw
   #insert("div", data-role: "header") 
     
   #insert("div", fake-data-role: "content") {
-    move_here("/html/body//noscript/img")
+    move_here("/html/body//noscript/img") {
+      wrap("div", class: "mw_img_wrapper")
+    }
     insert("div", class: "mw_product_details") {
       move_here("/html/body//div[@id='productDescription']")
       move_here("/html/body//div[@id='memberProductDetails']")
+      $(".//*[contains(@class, 'productID')]") {
+        log("@@@@@" + fetch("./text()"))
+        text() {
+          replace(/^\s/, "")
+        }
+      }
     }
     remove(".//*[contains(@class, 'hidden')]")
     #}

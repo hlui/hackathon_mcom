@@ -1,7 +1,25 @@
 .mw_product {
   overflow: hidden;
-  img#mainImage {
+  margin-top: 10px;
+  .mw_img_wrapper {
+    min-width: 40%;
     float: left;
-    width: 40%;
+    img#mainImage {
+      //width: 40%;
+      width: 100%;
+    }
+  }
+  .mw_product_details {
+    overflow: hidden;
+  }
+  #bullets {
+    padding-left: 20px;
+  }
+  #pdpQty {
+    margin-bottom: 10px;
+  }
+  #newProduct, #pdpAttributes, #emailAndPrint, .addToWishlist,
+  .ValidationhideTriangle, [id*='finditinstore'], .masterProduct {
+    display: none;
   }
 }
