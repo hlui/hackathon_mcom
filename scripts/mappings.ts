@@ -21,6 +21,7 @@ match($status) {
       with(/^\/$|^\/\?/) {
         log("--> Importing pages/home.ts in mappings.ts")
         @import pages/home.ts
+        export('Location', '//'+$host+'/shop/womens-clothing/womens-tops?id=255&edge=hybrid&cm_sp=us_gna-_-shop-tops')
       }
       with(/womens-clothing\/womens-tops/) {
         # http://mlocal.macys.com/shop/womens-clothing/womens-tops?id=255&edge=hybrid&cm_sp=us_gna-_-shop-tops
