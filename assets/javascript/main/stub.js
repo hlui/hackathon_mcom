@@ -16,6 +16,10 @@ $(document).bind('pageinit', function() {
       url: url,
       cache: false,
       dataType: "html",
+      beforeSend: function(xhr) {
+        xhr.setRequestHeader('X-Hjax', 'true');
+        xhr.setRequestHeader('X-Hjax-Container', '#hjaxingItUP');
+      },
       success: onSuccess
     });
   });

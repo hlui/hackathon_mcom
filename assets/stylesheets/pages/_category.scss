@@ -4,6 +4,11 @@
     .mw_data_role_content {
       .shortDescription {
         width: 125px;
+        height: 1px;
+        visibility: hidden;
+      }
+      .priceSale {
+        //display: none;
       }
       .productThumbnail {
        // border: 1px solid lightgrey;
@@ -18,7 +23,7 @@
         &:before {
           border-right: 1px solid lightgrey;
           width: 1px;
-          height: 260px;
+          height: 180px;
           position: absolute;
           right: 0;
           content: "";

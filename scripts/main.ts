@@ -1,11 +1,12 @@
 # The main file executed by Tritium. The start of all other files.
 
-match($path) {
-  with(/\/shop\/product/) {
-    html("UTF-8") {
-      $content_type = "ajax"
-      $("/html") {
-        log("--> Importing pages/product.ts in mappings.ts")
+match($x_hjax, /.+/) {
+  $hjax = "true"    
+  hjax_html("UTF-8") {
+    $content_type = "hjax"
+    match($path) {
+      with(/\/shop\/product/) {
+        log("--> Importing pages/product.ts in main.ts")
         @import pages/product.ts
       }
     }
@@ -29,6 +30,9 @@ match($content_type) {
   # with(/javascript/) {
   #   @import ajax.ts
   # }
+  with(/hjax/) {
+  
+  }
   else() {
     log(concat("Passing through ", $content_type, " unmodified"))
   }

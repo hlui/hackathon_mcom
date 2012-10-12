@@ -251,3 +251,16 @@
     insert_top("script", src: "http://code.jquery.com/jquery-1.8.2.js")
   }
 }
+
+@func Text.hjax_html(Text %encoding) {
+  html(%encoding) {  
+    match($hjax, /true/) {     
+      # convert HTML to fragment
+      move_here("/html/head/*")
+      move_here("/html/body/*")
+      remove("/html")
+    }
+    yield()
+  }
+  replace(/<!DOCTYPE.*?>/, "")
+}

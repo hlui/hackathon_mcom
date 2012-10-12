@@ -1,14 +1,14 @@
-insert_after("div", id: "mw_content_product", fake-data-role: "page", class: "mw_product") {
+insert("div", id: "mw_content_product", fake-data-role: "page", class: "mw_product") {
     
   #insert("div", data-role: "header") 
     
   #insert("div", fake-data-role: "content") {
-    move_here("/html/body//noscript/img") {
+    move_here("//noscript/img") {
       wrap("div", class: "mw_img_wrapper")
     }
     insert("div", class: "mw_product_details") {
-      move_here("/html/body//div[@id='productDescription']")
-      move_here("/html/body//div[@id='memberProductDetails']")
+      move_here("//div[@id='productDescription']")
+      move_here("//div[@id='memberProductDetails']")
       $(".//*[contains(@class, 'productID')]") {
         log("@@@@@" + fetch("./text()"))
         text() {
